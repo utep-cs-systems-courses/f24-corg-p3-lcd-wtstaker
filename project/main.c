@@ -4,9 +4,8 @@
 #include "buzzer.h"
 #include "lcdutils.h"
 #include "lcddraw.h"
+#include <stdio.h>
 
-#include "lcdutils.h"
-#include "lcddraw.h"
 
 
 void screen_on();
