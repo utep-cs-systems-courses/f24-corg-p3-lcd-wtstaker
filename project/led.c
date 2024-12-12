@@ -2,7 +2,7 @@
 #include <msp430.h>
 
 //initialize the LED pins as outputs
-void init_leds(void) {
+void ledInit(void) {
     P1DIR |= LEDS; // Set P1.0 and P1.6 as outputs
 }
 
