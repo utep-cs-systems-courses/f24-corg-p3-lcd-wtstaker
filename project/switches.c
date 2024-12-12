@@ -1,3 +1,5 @@
+#include <msp430.h>
+#include "switches.h"
 void switchInit(){
   P2REN |= SWITCHES;  
   P2IE |= SWITCHES;   
