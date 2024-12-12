@@ -2,7 +2,7 @@
 #include "libTimer.h"
 #include "led.h"
 #include "buzzer.h"
-#include "switches.h"
+
 
 #include "lcdutils.h"
 #include "lcddraw.h"
