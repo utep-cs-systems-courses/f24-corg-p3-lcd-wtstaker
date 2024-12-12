@@ -8,7 +8,7 @@
 
 
 
-void screen_on();
+
 int main(void) {
   configureClocks(); 
   ledInit();
