@@ -22,9 +22,9 @@ all:main.elf
 
 #additional rules for files
 
-main.elf: ${COMMON_OBJECTS} main.o main.o buzzer.o led.o ../lib/libTimer.a
+main.elf: ${COMMON_OBJECTS} main.o main.o buzzer.o led.o switches.o ../lib/libTimer.a
 
-	${CC} ${CFLAGS} ${LDFLAGS} -o $@ $^ -lTimer -lLcd
+	${CC} ${CFLAGS} ${LDFLAGS} -o $@ $^ 
 
 
 
