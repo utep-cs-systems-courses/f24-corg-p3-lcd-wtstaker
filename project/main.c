@@ -22,12 +22,7 @@ int main(void) {
  
   
 }
-void start_screen(){
+void screen_on(){
   drawString8x12(20, 1,"test", COLOR_RED, COLOR_BLACK);
-  drawString8x12(1, 32, "SW1: LEFT", COLOR_WHITE, COLOR_BLACK);
-  drawString8x12(1, 44, "SW2: RIGHT", COLOR_WHITE, COLOR_BLACK);
-  drawString8x12(1, 56, "SW3: UP", COLOR_WHITE, COLOR_BLACK);
-  drawString8x12(1, 68, "SW4: DOWN", COLOR_WHITE, COLOR_BLACK);
-  drawString8x12(1, 92, "PRESS ANYTHING", COLOR_WHITE, COLOR_BLACK);
-  drawString8x12(1, 104, "TO BEGIN", COLOR_WHITE, COLOR_BLACK);
+ 
 }
