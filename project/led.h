@@ -9,4 +9,5 @@
 void init_leds(void);
 void turn_on_green_led(void);
 void turn_on_red_led(void);
+void ledsOff();
 #endif 
