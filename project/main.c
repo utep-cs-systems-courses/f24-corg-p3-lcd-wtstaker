@@ -1,10 +1,12 @@
 #include <msp430.h>
 #include "libTimer.h"
-
+#include "led.h"
+#include "buzzer.h"
+#include "switches.h"
 
 #include "lcdutils.h"
 #include "lcddraw.h"
-#include "handler.h"
+
 
 void screen_on();
 int main(void) {
