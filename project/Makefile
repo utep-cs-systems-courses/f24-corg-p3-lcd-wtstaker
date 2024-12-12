@@ -22,7 +22,7 @@ all:main.elf
 
 #additional rules for files
 
-main.elf: ${COMMON_OBJECTS} main.o handler.o blink_screen.o
+main.elf: ${COMMON_OBJECTS} main.o main.o buzzer.o led.o ../lib/libTimer.a
 
 	${CC} ${CFLAGS} ${LDFLAGS} -o $@ $^ -lTimer -lLcd
 
