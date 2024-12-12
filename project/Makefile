@@ -22,9 +22,9 @@ all:main.elf
 
 #additional rules for files
 
-main.elf: ${COMMON_OBJECTS} main.o main.o buzzer.o led.o switches.o ../lib/libTimer.a
+main.elf: ${COMMON_OBJECTS} main.o buzzer.o led.o switches.o ../lib/libTimer.a ../lib/libLcd.a
 
-	${CC} ${CFLAGS} ${LDFLAGS} -o $@ $^ 
+	${CC} ${CFLAGS} -o $@ $^ 
 
 
 
@@ -36,4 +36,4 @@ load: main.elf
 
 clean:
 
-	rm -f *.o *.elf
+	rm -f *.o *.elf *~ *.c#
