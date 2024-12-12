@@ -6,7 +6,7 @@
 #define LEDS (BIT0 | BIT6)
 
 // functions for the LEDs
-void init_leds(void);
+void ledInit(void);
 void turn_on_green_led(void);
 void turn_on_red_led(void);
 void ledsOff();
