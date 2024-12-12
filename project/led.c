@@ -5,6 +5,11 @@
 void init_leds(void) {
     P1DIR |= LEDS; // Set P1.0 and P1.6 as outputs
 }
+
+void ledsOff(){
+  P1OUT &= ~LEDS;
+}
+
 //turn on the green LED and turn off the red LED
 void turn_on_green_led(void) {
     P1OUT |= LED_GREEN;
