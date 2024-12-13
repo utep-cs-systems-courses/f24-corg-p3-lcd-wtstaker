@@ -22,7 +22,7 @@ all:main.elf
 
 #additional rules for files
 
-main.elf: ${COMMON_OBJECTS} main.o buzzer.o led.o switches.o ../lib/libTimer.a ../lib/libLcd.a
+main.elf: ${COMMON_OBJECTS} main.o buzzer.o led.o switches.o port2Inthandler.o stateMachine.o freqAssembly.o ../lib/libTimer.a ../lib/libLcd.a
 
 	${CC} ${CFLAGS} -o $@ $^ 
 
