@@ -2,6 +2,8 @@
 #include "libTimer.h"
 #include "buzzer.h"
 
+short buzzer_frequency = 0; // global variable for freq used by assembly
+
 void buzzerInit()
 {
     /* 
