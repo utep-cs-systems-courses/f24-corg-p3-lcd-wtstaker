@@ -1,5 +1,6 @@
 #include <msp430.h>
 #include "switches.h"
+#include "lcddraw.h"
 
 void switchInit(){
   P2REN |= SWITCHES;  
