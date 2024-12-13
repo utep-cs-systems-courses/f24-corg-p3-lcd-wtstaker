@@ -7,7 +7,8 @@
 #include "lcddraw.h"
 #include "stateMachine.h"
 
-
+extern short buzzer_frequency; // global variable
+void buzzer_set_frequency();   // assembly function
 void screen_on();
 void draw_smiley_face();
 void play_tone();
@@ -19,6 +20,8 @@ int main(void) {
     configureClocks(); 
     ledInit();
     buzzerInit();
+    buzzer_set_frequency();    // Call the assembly function to set frequency
+    buzzer_set_period(buzzer_frequency); // Set the buzzer period using updated frequency
     switchInit();
     enableWDTInterrupts();
 
