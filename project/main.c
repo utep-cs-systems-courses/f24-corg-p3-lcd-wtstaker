@@ -1,10 +1,12 @@
 #include <msp430.h>
+#include <stdio.h>
 #include "libTimer.h"
 #include "led.h"
 #include "buzzer.h"
 #include "lcdutils.h"
 #include "lcddraw.h"
-#include <stdio.h>
+#include "stateMachine.h"
+
 
 void screen_on();
 void draw_smiley_face();
@@ -47,21 +49,21 @@ void draw_smiley_face() {
     // Draw right eye
     fillCircle(center_x + 10, center_y - 10, eye_radius, COLOR_BLACK);
 
-    // Draw mouth (rectangle to represent a smile)
+    // Draw mouth
     fillRectangle(center_x - mouth_width / 2, center_y + 10, mouth_width, mouth_height, COLOR_BLACK);
 }
 
-/** Function to play a simple tone using the buzzer */
+// Function to play tone using the buzzer 
 void play_tone() {
     if (toggle) {
-        buzzer_set_period(1000); // Set tone frequency (e.g., 2kHz tone)
+        buzzer_set_period(1000); // Set tone frequency 
     } else {
         buzzer_set_period(0);    // Turn off the buzzer
     }
     toggle = !toggle; // Toggle for next call
 }
 
-/** Function to toggle LEDs */
+// Function to toggle LEDs
 void toggle_leds() {
     if (toggle) {
         turn_on_green_led(); // Turn on the green LED
@@ -71,14 +73,14 @@ void toggle_leds() {
     toggle = !toggle; // Toggle for next call
 }
 
-/** Watchdog Timer ISR */
+// state machine
 void __interrupt_vec(WDT_VECTOR) WDT() {
     static int count = 0;
     count++;
 
-    if (count == 125) { // Example logic to control timing
-        play_tone();    // Play tone every second
-        toggle_leds();  // Alternate LEDs every second
-        count = 0;      // Reset count
+    if (count == 125) { 
+        advance_state(); 
+        execute_state(); 
+        count = 0;       
     }
 }
