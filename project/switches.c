@@ -23,4 +23,5 @@ void switch_interrupt_handler() {
         drawString8x12(20, 20, "Switch 2 Pressed!",   // Display a message
                    COLOR_WHITE, COLOR_BLACK);
     }
+}
     
